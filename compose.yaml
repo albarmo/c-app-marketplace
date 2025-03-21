@@ -1,0 +1,14 @@
+version: "3"
+services:
+  dragonfruit:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3000"
+    volumes:
+      - dragonfruit_node_modules:/app/node_modules  # Named volume for node_modules
+    container_name: dragonfruit
+
+volumes:
+  dragonfruit_node_modules:
